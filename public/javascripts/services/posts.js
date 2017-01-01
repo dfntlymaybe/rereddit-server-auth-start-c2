@@ -16,7 +16,7 @@ app.factory('posts', ['$http', function($http) {
     },
 
     create: function(post) {
-      return $http.post('/posts', post).success(function(data){
+      return $http.post('/posts', post).then(function(data){
         postService.posts.push(data);
       });
     },
@@ -34,6 +34,5 @@ app.factory('posts', ['$http', function($http) {
     }
   };
   
-
   return postService;
 }]);
